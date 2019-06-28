@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+
+    <style type="text/css">
+      .color-picker__button {
+        border: 1px solid #ccc;
+        background-color: white;
+        border-radius: 5px;
+      }
+
+      .vertical-align {
+        display: flex;
+        align-items: center;
+      }
+
+      .space-items > * {
+        margin-right: 5px;
+      }
+    </style>
+
+    <script>
+      function changeColor(hex) {
+        var chosenColor = document.getElementById("color-picker").value;
+        document.getElementById("chosen-color-label").innerHTML = chosenColor;
+        document.getElementById(
+          "chosen-color-swatch"
+        ).style.backgroundColor = chosenColor;
+      }
+    </script>
+
+    <title>Bryan Mey - Simple Color Picker</title>
+  </head>
+  <body>
+    <h1>Hello!</h1>
+    <p>This is a simple example of a color picker</p>
+
+    <div class="vertical-align space-items">
+      <label for="color-picker">Pick a color:</label>
+      <input
+        type="color"
+        id="color-picker"
+        class="color-picker__button"
+        value="#aabbcc"
+        onChange="changeColor(0)"
+      />
+    </div>
+
+    <br />
+
+    <div class="vertical-align space-items">
+      <label>Chosen color:</label>
+      <div
+        id="chosen-color-swatch"
+        style="width: 10px; height: 10px; background-color: #aabbcc;"
+      ></div>
+      <div id="chosen-color-label">#aabbcc</div>
+    </div>
+  </body>
+</html>
